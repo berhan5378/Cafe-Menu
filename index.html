@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caffa Cafe Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf6;
+      color: #333;
+    }
+
+    header {
+      background-color: #6b3e26;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+
+    .tabs {
+      text-align: center;
+      margin: 1rem;
+    }
+
+    .tabs button {
+      background-color: #e0d2c0;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      margin: 0 0.5rem;
+      font-size: 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tabs button.active {
+      background-color: #6b3e26;
+      color: white;
+    }
+
+    .menu-section {
+      display: none;
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .menu-section.active {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+
+    .item-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #6b3e26;
+      margin-bottom: 0.3rem;
+    }
+
+    .item-desc {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #d57b24;
+      font-size: 1rem;
+    }
+
+    .fav-button {
+      background-color: #ffefd8;
+      color: #6b3e26;
+      border: 1px solid #d57b24;
+      padding: 8px 14px;
+      margin-top: 0.6rem;
+      width: 100%;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .fav-button:hover,
+    .fav-button.liked {
+      background-color: #d57b24;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #f3ece5;
+      font-size: 0.9rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Caffa Café Menu</h1>
+  <p>Authentic Taste • Modern Vibe</p>
+</header>
+
+<div class="tabs">
+  <button class="active" onclick="showMenu('food')">🥘 Food</button>
+  <button onclick="showMenu('drinks')">🍹 Drinks</button>
+</div>
+
+<div style="text-align:center; margin-top: 1rem;">
+  <button onclick="togglePanel()" style="background:#6b3e26; color:white; padding:10px 18px; border:none; border-radius:25px; font-size:1rem; cursor:pointer;">
+    🛒 View Your Order / Liked Items
+  </button>
+</div>
+
+<!-- Food Section -->
+<div id="food" class="menu-section active">
+
+  <div class="card">
+    <img src="https://s3-media0.fl.yelpcdn.com/bphoto/um7TKtD0HePKPrhLriqfww/l.jpg" alt="Firfir">
+    <div class="card-body">
+      <div class="item-name">Caffa Special Firfir</div>
+      <div class="item-desc">Injera pieces sautéed in spiced butter and berbere sauce.</div>
+      <div class="price">ETB 90</div>
+      <button class="fav-button" onclick="toggleLike(this, 'Caffa Special Firfir')">➕ Add to My Favorites</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://th.bing.com/th/id/R.9e3aebdb1d6468ea453dbaab24c7b6c9?rik=9YH1oCRQjB%2fvVg&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Chechebsa">
+    <div class="card-body">
+      <div class="item-name">Chechebsa</div>
+      <div class="item-desc">Soft chopped flatbread mixed with spiced clarified butter.</div>
+      <div class="price">ETB 75</div>
+      <button class="fav-button" onclick="toggleLike(this, 'Chechebsa')">➕ Add to My Favorites</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://cdn.cheapism.com/images/iStock-167236884.max-825x550.jpg" alt="Burger">
+    <div class="card-body">
+      <div class="item-name">Caffa Burger & Fries</div>
+      <div class="item-desc">Juicy beef patty, melted cheese, and crispy fries.</div>
+      <div class="price">ETB 95</div>
+      <button class="fav-button" onclick="toggleLike(this, 'Caffa Burger & Fries')">➕ Add to My Favorites</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Drinks Section -->
+<div id="drinks" class="menu-section">
+
+  <div class="card">
+    <img src="https://img.freepik.com/premium-photo/coffee-cup-beans-rustic-background-coffee-espresso-piece-cake-with-curl-cup-coffee-coffee-beans-table_107989-534.jpg" alt="Bunna">
+    <div class="card-body">
+      <div class="item-name">Ethiopian Bunna</div>
+      <div class="item-desc">Traditional Ethiopian coffee served in a jebena.</div>
+      <div class="price">ETB 55</div>
+      <button class="fav-button" onclick="toggleLike(this, 'Ethiopian Bunna')">➕ Add to My Favorites</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.-gKAFkMdoyRpvQjC0wEfLAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Juice">
+    <div class="card-body">
+      <div class="item-name">Caffa Juice</div>
+      <div class="item-desc">Refreshing mango-avocado blend, 100% natural.</div>
+      <div class="price">ETB 60</div>
+      <button class="fav-button" onclick="toggleLike(this, 'Caffa Juice')">➕ Add to My Favorites</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://healthyhappysmart.com/blog/wp-content/uploads/2014/07/smoothies-1024x1024.jpg" alt="Smoothie">
+    <div class="card-body">
+      <div class="item-name">Caffa Smoothie</div>
+      <div class="item-desc">Banana, mango, yogurt & honey smoothie delight.</div>
+      <div class="price">ETB 65</div>
+      <button class="fav-button" onclick="toggleLike(this, 'Caffa Smoothie')">➕ Add to My Favorites</button>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  📍 Caffa Street, Addis Ababa<br/>
+  📞 +251 912 345 678 &nbsp; | &nbsp; 📱 @CaffaCafe<br/>
+  🌐 Scan the QR to view or order online
+</footer>
+
+<script>
+  function showMenu(type) {
+    document.querySelectorAll('.menu-section').forEach(div => div.classList.remove('active'));
+    document.getElementById(type).classList.add('active');
+    document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  let likedItems = [];
+
+  function toggleLike(button, itemName) {
+    button.classList.toggle('liked');
+
+    if (button.classList.contains('liked')) {
+      button.textContent = '❤️ Added to Favorites';
+      likedItems.push(itemName);
+    } else {
+      button.textContent = '➕ Add to My Favorites';
+      likedItems = likedItems.filter(i => i !== itemName);
+    }
+
+    console.log('Favorites:', likedItems);
+  }
+
+  function togglePanel() {
+    alert("Liked Items:\n\n" + (likedItems.length ? likedItems.join('\n') : "You haven't selected any favorites yet."));
+  }
+</script>
+
+</body>
+</html>
