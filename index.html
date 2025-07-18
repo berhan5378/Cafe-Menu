@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AB hotel Menu</title>
+  <title>Caffa Cafe Menu</title>
   <style>
     body {
       margin: 0;
@@ -12,39 +12,21 @@
       color: #333;
     }
 
-    header { 
-      background: url('https://www.mymathews.com/media/institute_banner/Pavan_College_of_Nursing_Banner.JPG') no-repeat center center/cover;
- position: relative;
+    header {
+      background-color: #6b3e26;
       color: white;
       text-align: center;
       padding: 2rem 1rem;
     }
-    header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* 50% black overlay */
-  z-index: 10;
-}
 
     header h1 {
-      position: relative;
       margin: 0;
       font-size: 2.5rem;
       letter-spacing: 1px;
-      z-index: 100;
-    }
-    header p{ 
-      position: relative;
-      z-index: 100;
     }
 
     .tabs {
       text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center; 
       margin: 1rem;
     }
 
@@ -149,19 +131,18 @@
 <body>
 
 <header>
-  <h1>AB HOTEL</h1>
+  <h1>Caffa Café Menu</h1>
   <p>Authentic Taste • Modern Vibe</p>
 </header>
 
 <div class="tabs">
-  <button class="active" onclick="showMenu('food')">🥘 ምግብ</button>
-  <button onclick="showMenu('drinks')">🍹 መጠጥ</button>
-  <button onclick="showMenu('desserts')">🛠️ ተጨማሪ አገልግሎቶች</button>
+  <button class="active" onclick="showMenu('food')">🥘 Food</button>
+  <button onclick="showMenu('drinks')">🍹 Drinks</button>
 </div>
 
 <div style="text-align:center; margin-top: 1rem;">
   <button onclick="togglePanel()" style="background:#6b3e26; color:white; padding:10px 18px; border:none; border-radius:25px; font-size:1rem; cursor:pointer;">
-    🛒  የመረጡትን ይመልከቱ
+    🛒 View Your Order / Liked Items
   </button>
 </div>
 
@@ -169,9 +150,9 @@
 <div id="food" class="menu-section active">
 
   <div class="card">
-    <img src="https://farm8.staticflickr.com/7394/10246007065_4eb4f174fb_o.jpg" alt="Firfir">
+    <img src="https://s3-media0.fl.yelpcdn.com/bphoto/um7TKtD0HePKPrhLriqfww/l.jpg" alt="Firfir">
     <div class="card-body">
-      <div class="item-name">derek tibs</div>
+      <div class="item-name">Caffa Special Firfir</div>
       <div class="item-desc">Injera pieces sautéed in spiced butter and berbere sauce.</div>
       <div class="price">ETB 90</div>
       <button class="fav-button" onclick="toggleLike(this, 'Caffa Special Firfir')">➕ Add to My Favorites</button>
@@ -179,9 +160,9 @@
   </div>
 
   <div class="card">
-    <img src="img/Screenshot 2025-07-17 233144.png" alt="Chechebsa">
+    <img src="https://th.bing.com/th/id/R.9e3aebdb1d6468ea453dbaab24c7b6c9?rik=9YH1oCRQjB%2fvVg&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Chechebsa">
     <div class="card-body">
-      <div class="item-name">chukame</div>
+      <div class="item-name">Chechebsa</div>
       <div class="item-desc">Soft chopped flatbread mixed with spiced clarified butter.</div>
       <div class="price">ETB 75</div>
       <button class="fav-button" onclick="toggleLike(this, 'Chechebsa')">➕ Add to My Favorites</button>
@@ -189,89 +170,9 @@
   </div>
 
   <div class="card">
-    <img src="https://media.istockphoto.com/photos/traditional-oromo-and-ethiopian-cuisine-dish-aka-tibs-ethiopia-picture-id619254834?k=20&m=619254834&s=612x612&w=0&h=pkdpXe8iWTphB0-jaw6IXqSL9zz3mBIoXXzHF9crBEI=" alt="Burger">
+    <img src="https://cdn.cheapism.com/images/iStock-167236884.max-825x550.jpg" alt="Burger">
     <div class="card-body">
-      <div class="item-name">tibs</div>
-      <div class="item-desc">Juicy beef patty, melted cheese, and crispy fries.</div>
-      <div class="price">ETB 95</div>
-      <button class="fav-button" onclick="toggleLike(this, 'Caffa Burger & Fries')">➕ Add to My Favorites</button>
-    </div>
-  </div>
-
-  
-  <div class="card">
-    <img src="https://media.istockphoto.com/id/1346799639/photo/kitfo-with-injera-bread.jpg?s=612x612&w=0&k=20&c=7I-wjl2G-EyuhSamwoVAl4MfhCbJlDQOzt5qZRhgVKY=" alt="Firfir">
-    <div class="card-body">
-      <div class="item-name">special kitfo</div>
-      <div class="item-desc">Injera pieces sautéed in spiced butter and berbere sauce.</div>
-      <div class="price">ETB 90</div>
-      <button class="fav-button" onclick="toggleLike(this, 'Caffa Special Firfir')">➕ Add to My Favorites</button>
-    </div>
-  </div>
-  <div class="card">
-    <img src=" https://img.freepik.com/premium-photo/raw-ground-beef-ready-preparation_434193-6604.jpg" alt="Burger">
-    <div class="card-body">
-      <div class="item-name">normal kitfo</div>
-      <div class="item-desc">Juicy beef patty, melted cheese, and crispy fries.</div>
-      <div class="price">ETB 95</div>
-      <button class="fav-button" onclick="toggleLike(this, 'Caffa Burger & Fries')">➕ Add to My Favorites</button>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://eatyourworld.com/wp-content/uploads/2021/10/0224e65fe0cbad8bb3ad0a68ab52cfaeb5902390.jpg" alt="Chechebsa">
-    <div class="card-body">
-      <div class="item-name">bursame</div>
-      <div class="item-desc">Soft chopped flatbread mixed with spiced clarified butter.</div>
-      <div class="price">ETB 75</div>
-      <button class="fav-button" onclick="toggleLike(this, 'Chechebsa')">➕ Add to My Favorites</button>
-    </div>
-  </div>
-
-
-    <div class="card">
-    <img src="https://i.ytimg.com/vi/_HbIDW5CNiI/oar2.jpg?sqp=-oaymwEkCJUDENAFSFqQAgHyq4qpAxMIARUAAAAAJQAAyEI9AICiQ3gB&rs=AOn4CLDE7sOaH7X9t3NGUfsMzvjaOX65hA" alt="Burger">
-    <div class="card-body">
-      <div class="item-name">omolicho be gomen</div>
-      <div class="item-desc">Juicy beef patty, melted cheese, and crispy fries.</div>
-      <div class="price">ETB 95</div>
-      <button class="fav-button" onclick="toggleLike(this, 'Caffa Burger & Fries')">➕ Add to My Favorites</button>
-    </div>
-  </div>
-
-    <div class="card">
-    <img src="https://tb-static.uber.com/prod/image-proc/processed_images/f61f6a15a0c187b1d6abb0f8f0a61468/7f4ae9ca0446cbc23e71d8d395a98428.jpeg" alt="Burger">
-    <div class="card-body">
-      <div class="item-name">kikil be enjera</div>
-      <div class="item-desc">Juicy beef patty, melted cheese, and crispy fries.</div>
-      <div class="price">ETB 95</div>
-      <button class="fav-button" onclick="toggleLike(this, 'Caffa Burger & Fries')">➕ Add to My Favorites</button>
-    </div>
-  </div>
-
-    <div class="card">
-    <img src="https://i1.wp.com/tarasmulticulturaltable.com/wp-content/uploads/2019/09/Ayib-Ethiopian-Homemade-Fresh-Cheese-4-of-7.jpg?fit=1300%2C855&ssl=1" alt="Burger">
-    <div class="card-body">
-      <div class="item-name">normal aybi</div>
-      <div class="item-desc">Juicy beef patty, melted cheese, and crispy fries.</div>
-      <div class="price">ETB 95</div>
-      <button class="fav-button" onclick="toggleLike(this, 'Caffa Burger & Fries')">➕ Add to My Favorites</button>
-    </div>
-  </div>
-
-    <div class="card">
-    <img src="https://hometownhawk.com/wp-content/uploads/2024/02/cafe-lalibela-tempe-az-ethiopian-eats.webp" alt="Burger">
-    <div class="card-body">
-      <div class="item-name">specail tegabino</div>
-      <div class="item-desc">Juicy beef patty, melted cheese, and crispy fries.</div>
-      <div class="price">ETB 95</div>
-      <button class="fav-button" onclick="toggleLike(this, 'Caffa Burger & Fries')">➕ Add to My Favorites</button>
-    </div>
-  </div>
-
-    <div class="card">
-    <img src="https://tse4.mm.bing.net/th/id/OIP.Vnsw_TlHkSUyf7yxcSRW6AHaDs?w=1920&h=958&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Burger">
-    <div class="card-body">
-      <div class="item-name">normal pasta</div>
+      <div class="item-name">Caffa Burger & Fries</div>
       <div class="item-desc">Juicy beef patty, melted cheese, and crispy fries.</div>
       <div class="price">ETB 95</div>
       <button class="fav-button" onclick="toggleLike(this, 'Caffa Burger & Fries')">➕ Add to My Favorites</button>
@@ -284,10 +185,10 @@
 <div id="drinks" class="menu-section">
 
   <div class="card">
-    <img src="https://tse1.mm.bing.net/th/id/OIP.l71Z4Hw7na0LwjbkVhrn8gHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Bunna">
+    <img src="https://img.freepik.com/premium-photo/coffee-cup-beans-rustic-background-coffee-espresso-piece-cake-with-curl-cup-coffee-coffee-beans-table_107989-534.jpg" alt="Bunna">
     <div class="card-body">
-      <div class="item-name">Awash Tekeshno</div>
-      <div class="item-desc">Traditional Ethiopian coffee served in a jebena and cups.</div>
+      <div class="item-name">Ethiopian Bunna</div>
+      <div class="item-desc">Traditional Ethiopian coffee served in a jebena.</div>
       <div class="price">ETB 55</div>
       <button class="fav-button" onclick="toggleLike(this, 'Ethiopian Bunna')">➕ Add to My Favorites</button>
     </div>
@@ -296,7 +197,7 @@
   <div class="card">
     <img src="https://tse2.mm.bing.net/th/id/OIP.-gKAFkMdoyRpvQjC0wEfLAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Juice">
     <div class="card-body">
-      <div class="item-name">Juice</div>
+      <div class="item-name">Caffa Juice</div>
       <div class="item-desc">Refreshing mango-avocado blend, 100% natural.</div>
       <div class="price">ETB 60</div>
       <button class="fav-button" onclick="toggleLike(this, 'Caffa Juice')">➕ Add to My Favorites</button>
@@ -306,54 +207,12 @@
   <div class="card">
     <img src="https://healthyhappysmart.com/blog/wp-content/uploads/2014/07/smoothies-1024x1024.jpg" alt="Smoothie">
     <div class="card-body">
-      <div class="item-name">spacial juice</div>
+      <div class="item-name">Caffa Smoothie</div>
       <div class="item-desc">Banana, mango, yogurt & honey smoothie delight.</div>
       <div class="price">ETB 65</div>
       <button class="fav-button" onclick="toggleLike(this, 'Caffa Smoothie')">➕ Add to My Favorites</button>
     </div>
   </div>
-  <div class="card">
-    <img src="https://asbyhotel.se/wp-content/uploads/2019/07/l%C3%A4sk_produkt-800x533.jpg" alt="Smoothie">
-    <div class="card-body">
-      <div class="item-name">leslasa</div>
-      <div class="item-desc">Banana, mango, yogurt & honey smoothie delight.</div>
-      <div class="price">ETB 65</div>
-      <button class="fav-button" onclick="toggleLike(this, 'Caffa Smoothie')">➕ Add to My Favorites</button>
-    </div>
-  </div>
-
-</div>
-<div id="desserts" class="menu-section">
-
-  <div class="card">
-    <img src="https://th.bing.com/th/id/R.cf199a4ce549b1ae0c6ba51d5196fd68?rik=7ZOwSip%2fAU6x5w&pid=ImgRaw&r=0" alt="Bunna">
-    <div class="card-body">
-      <div class="item-name">alga</div>
-      <div class="item-desc">Traditional Ethiopian coffee served in a jebena and cups.</div>
-      <div class="price">ETB 55</div>
-      <button class="fav-button" onclick="toggleLike(this, 'Ethiopian Bunna')">➕ Add to My Favorites</button>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://mohanamahal.in/wp-content/uploads/2022/04/IMG-20210817-WA0014-min.jpg" alt="Juice">
-    <div class="card-body">
-      <div class="item-name">adarash</div>
-      <div class="item-desc">Refreshing mango-avocado blend, 100% natural.</div>
-      <div class="price">ETB 60</div>
-      <button class="fav-button" onclick="toggleLike(this, 'Caffa Juice')">➕ Add to My Favorites</button>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://tse3.mm.bing.net/th/id/OIP.vYfWZg68pXzhRnBot7KbrwHaFb?w=980&h=719&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Smoothie">
-    <div class="card-body">
-      <div class="item-name">Refreshment</div>
-      <div class="item-desc">Banana, mango, yogurt & honey smoothie delight.</div>
-      <div class="price">ETB 65</div>
-      <button class="fav-button" onclick="toggleLike(this, 'Caffa Smoothie')">➕ Add to My Favorites</button>
-    </div>
-  </div> 
 
 </div>
 
